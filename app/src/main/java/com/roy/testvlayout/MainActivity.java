@@ -30,26 +30,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final boolean BANNER_LAYOUT = true;
-
-    private static final boolean FIX_LAYOUT = true;
-
-    private static final boolean LINEAR_LAYOUT = true;
-
-    private static final boolean SINGLE_LAYOUT = true;
-
-    private static final boolean FLOAT_LAYOUT = true;
-
-    private static final boolean ONEN_LAYOUT = true;
-
-    private static final boolean COLUMN_LAYOUT = true;
-
-    private static final boolean GRID_LAYOUT = true;
-
-    private static final boolean STICKY_LAYOUT = true;
-
-    private static final boolean STAGGER_LAYOUT = true;
-
     private RecyclerView mRecylerView;
 
 
@@ -123,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         stickyLayoutHelper.setOffset(10);
         stickyLayoutHelper.setBgColor(0xff00ff);
         stickyLayoutHelper.setPadding(10,10,10,10);
-        adapters.add(new MyAdapter(this, stickyLayoutHelper, 1, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300)));
+        adapters.add(new MyAdapter(this, stickyLayoutHelper, 1, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
 
 //--------------------ColumnLayoutHelper  列表布局----------------------
         ColumnLayoutHelper columnLayoutHelper = new ColumnLayoutHelper();
@@ -206,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         stickyLayoutHelper2.setOffset(10);
         stickyLayoutHelper2.setBgColor(0xff00ff);
         stickyLayoutHelper2.setPadding(10,10,10,10);
-        adapters.add(new MyAdapter(this, stickyLayoutHelper2, 1, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300)));
+        adapters.add(new MyAdapter(this, stickyLayoutHelper2, 1, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
 
         GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(3);
         gridLayoutHelper.setMargin(0, 10, 0, 10);
@@ -214,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
 //----------------StaggeredGridLayoutHelper 瀑布流-----------------
 
-        StaggeredGridLayoutHelper staggeredGridLayoutHelper = new StaggeredGridLayoutHelper(2, 10);
+        StaggeredGridLayoutHelper staggeredGridLayoutHelper = new StaggeredGridLayoutHelper(3, 10);
         staggeredGridLayoutHelper.setMargin(20, 10, 10, 10);
         staggeredGridLayoutHelper.setPadding(10, 10, 20, 10);
         staggeredGridLayoutHelper.setBgColor(0xFF86345A);
