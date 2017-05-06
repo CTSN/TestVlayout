@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         final RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
         mRecylerView.setRecycledViewPool(viewPool);
-        viewPool.setMaxRecycledViews(0, 17);
+        viewPool.setMaxRecycledViews(0, 20);
 
-        DelegateAdapter delegateAdapter = new DelegateAdapter(virtualLayoutManager, true);
+        DelegateAdapter delegateAdapter = new DelegateAdapter(virtualLayoutManager, false);
         mRecylerView.setAdapter(delegateAdapter);
 
         List<DelegateAdapter.Adapter> adapters = new LinkedList<>();
@@ -232,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         delegateAdapter.addAdapters(adapters);
+
 
 
         final Handler mainHandler = new Handler(Looper.getMainLooper());
