@@ -284,6 +284,15 @@ public class DelegateAdapter extends VirtualLayoutAdapter<RecyclerView.ViewHolde
         super.setLayoutHelpers(helpers);
     }
 
+
+    /**
+     * Append adapters to the end
+     *
+     * @param adapters adapters will be appended
+     */
+    public void addAdapters(@Nullable List<Adapter> adapters) {
+        addAdapters(mAdapters.size(), adapters);
+    }
     /**
      * Add adapters in <code>position</code>
      *
@@ -328,14 +337,7 @@ public class DelegateAdapter extends VirtualLayoutAdapter<RecyclerView.ViewHolde
         super.setLayoutHelpers(helpers);
     }
 
-    /**
-     * Append adapters to the end
-     *
-     * @param adapters adapters will be appended
-     */
-    public void addAdapters(@Nullable List<Adapter> adapters) {
-        addAdapters(mAdapters.size(), adapters);
-    }
+
 
     public void addAdapter(int position, @Nullable Adapter adapter) {
         addAdapters(position, Collections.singletonList(adapter));
@@ -496,6 +498,7 @@ public class DelegateAdapter extends VirtualLayoutAdapter<RecyclerView.ViewHolde
         return rs == null ? -1 : m;
     }
 
+    //adapter观察者
     private class AdapterDataObserver extends RecyclerView.AdapterDataObserver {
         int mStartPosition;
 
@@ -511,6 +514,7 @@ public class DelegateAdapter extends VirtualLayoutAdapter<RecyclerView.ViewHolde
             this.mIndex = index;
         }
 
+        //shua
         private boolean updateLayoutHelper(){
             if (mIndex < 0) {
                 return false;

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
+import com.alibaba.android.vlayout.extend.InnerRecycledViewPool;
 import com.alibaba.android.vlayout.layout.ColumnLayoutHelper;
 import com.alibaba.android.vlayout.layout.FixLayoutHelper;
 import com.alibaba.android.vlayout.layout.FloatLayoutHelper;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         VirtualLayoutManager virtualLayoutManager = new VirtualLayoutManager(this);
         mRecylerView.setLayoutManager(virtualLayoutManager);
 
-        final RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
+        final InnerRecycledViewPool viewPool = new InnerRecycledViewPool();
         mRecylerView.setRecycledViewPool(viewPool);
         viewPool.setMaxRecycledViews(0, 20);
 

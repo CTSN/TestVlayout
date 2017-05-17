@@ -380,6 +380,7 @@ public class VirtualLayoutManager extends ExposeLinearLayoutManagerEx implements
     }
 
 
+    //测量
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
